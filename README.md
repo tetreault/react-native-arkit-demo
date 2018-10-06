@@ -1,4 +1,9 @@
-# React Native ARKit Demo
+# React Native AR Demos
+
+Some of the basic demos so far:
+
+- ExpoARBasicDemo - created using Expo's AR API
+- RNARKitDemo - created using `react-native-arkit`
 
 ## Getting started with AR with Expo AR:
 
