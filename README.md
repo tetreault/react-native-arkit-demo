@@ -3,6 +3,7 @@
 Some of the basic demos so far:
 
 - ExpoARBasicDemo - created using Expo's AR API
+- ExpoARHitTesting - AR Hit Test demo with Expo's AR API
 - RNARKitDemo - created using `react-native-arkit`
 
 ## Getting started with AR with Expo AR:
