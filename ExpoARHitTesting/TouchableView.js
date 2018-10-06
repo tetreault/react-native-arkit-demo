@@ -5,6 +5,8 @@ import { PanResponder, View } from "react-native";
 
 /* global Alert */
 
+// reference: https://facebook.github.io/react-native/docs/panresponder.html
+
 class TouchableView extends React.Component {
   static propTypes = {
     onTouchesBegan: PropTypes.func.isRequired,

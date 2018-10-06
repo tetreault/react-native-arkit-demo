@@ -1,9 +1,9 @@
-import { AR } from 'expo';
-import ExpoTHREE, { THREE, AR as ThreeAR } from 'expo-three';
-import React from 'react';
+import { AR } from "expo";
+import ExpoTHREE, { THREE, AR as ThreeAR } from "expo-three";
+import React from "react";
 
-import { View as GraphicsView } from 'expo-graphics';
-import TouchableView from './TouchableView';
+import { View as GraphicsView } from "expo-graphics";
+import TouchableView from "./TouchableView";
 
 class HitTest extends React.Component {
   render() {
@@ -12,7 +12,8 @@ class HitTest extends React.Component {
       <TouchableView
         style={{ flex: 1 }}
         shouldCancelWhenOutside={false}
-        onTouchesBegan={this.onTouchesBegan}>
+        onTouchesBegan={this.onTouchesBegan}
+      >
         <GraphicsView
           style={{ flex: 1 }}
           onContextCreate={this.onContextCreate}
@@ -39,7 +40,7 @@ class HitTest extends React.Component {
       gl,
       width,
       height,
-      pixelRatio: scale,
+      pixelRatio: scale
     });
 
     this.scene = new THREE.Scene();
@@ -74,7 +75,7 @@ class HitTest extends React.Component {
 
   // Called when `onPanResponderGrant` is invoked.
   onTouchesBegan = async ({ locationX: x, locationY: y }) => {
-   if (!this.renderer) {
+    if (!this.renderer) {
       return;
     }
 
@@ -85,7 +86,7 @@ class HitTest extends React.Component {
     const { hitTest } = await AR.performHitTest(
       {
         x: x / size.width,
-        y: y / size.height,
+        y: y / size.height
       },
       // Result type from intersecting a horizontal plane estimate, determined for the current frame.
       AR.HitTestResultTypes.HorizontalPlane
@@ -99,10 +100,10 @@ class HitTest extends React.Component {
         this.scene.remove(this.cube);
       }
 
-      // Create a new cube 
+      // Create a new cube
       const geometry = new THREE.BoxGeometry(0.0254, 0.0254, 0.0254);
       const material = new THREE.MeshPhongMaterial({
-        color: 0x00ff00,
+        color: 0x00ff00
       });
       this.cube = new THREE.Mesh(geometry, material);
       // Add the cube to the scene
@@ -123,7 +124,7 @@ class HitTest extends React.Component {
       const matrix = new THREE.Matrix4();
       matrix.fromArray(worldTransform);
 
-      // Manually update the matrix 
+      // Manually update the matrix
       this.cube.applyMatrix(matrix);
       this.cube.updateMatrix();
     }
@@ -131,7 +132,6 @@ class HitTest extends React.Component {
 }
 
 export default HitTest;
-
 
 /*
 HitTestResultTypes = {

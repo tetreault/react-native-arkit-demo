@@ -61,6 +61,9 @@ export default class App extends React.Component {
     // Setup a light so we can see the cube color
     // AmbientLight colors all things in the scene equally.
     this.scene.add(new THREE.AmbientLight(0xffffff));
+
+    const grid = new THREE.GridHelper(100, 10);
+    this.scene.add(grid);
   };
 
   // When the phone rotates, or the view changes size, this method will be called.
