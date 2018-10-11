@@ -66,6 +66,7 @@ export default class App extends React.Component {
     // Ex: When we look down this camera will rotate to look down too!
     this.camera = new ThreeAR.Camera(width, height, 0.01, 1000);
 
+    // load in and render a DAE file
     const model = Assets.models.collada.stormtrooper;
     const onProgress = () => {
       console.log("progress console log");
@@ -77,7 +78,8 @@ export default class App extends React.Component {
       onAssetRequested
     });
     ExpoTHREE.utils.scaleLongestSideToSize(mesh, 0.25);
-    ExpoTHREE.utils.alignMesh(mesh, { y: 0 });
+    ExpoTHREE.utils.alignMesh(mesh, { y: 0, x: 0, z: 0 });
+    mesh.position.z = 1;
     this.scene.add(mesh);
 
     // Setup a light so we can see the cube color

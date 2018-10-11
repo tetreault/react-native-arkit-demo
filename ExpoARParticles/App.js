@@ -3,7 +3,6 @@ import { StatusBar } from "react-native";
 import Expo, { AR } from "expo";
 import ExpoTHREE, { AR as ThreeAR, THREE } from "expo-three";
 import { View as GraphicsView } from "expo-graphics";
-import Assets from "./Assets";
 
 export default class App extends React.Component {
   render() {
@@ -16,7 +15,7 @@ export default class App extends React.Component {
         isArEnabled
         isArRunningStateEnabled
         isArCameraStateEnabled
-        arTrackingConfiguration={AR.TrackingConfigurations.World}
+        arTrackingConfiguration={AR.TrackingConfigurations.Orientation}
       />
     );
   }
@@ -52,18 +51,38 @@ export default class App extends React.Component {
     // Ex: When we look down this camera will rotate to look down too!
     this.camera = new ThreeAR.Camera(width, height, 0.01, 1000);
 
-    const geometry = new THREE.BoxGeometry(0.5, 0.5, 1);
-    const map = await ExpoTHREE.loadAsync(Assets.icons["ios.png"]);
-    const material = new THREE.MeshBasicMaterial({
-      map // NOTE: How to create an Expo-compatible THREE texture
-    });
-    this.cube = new THREE.Mesh(geometry, material);
-    this.cube.position.z = -2;
-    this.scene.add(this.cube);
-
     // Setup a light so we can see the cube color
     // AmbientLight colors all things in the scene equally.
     this.scene.add(new THREE.AmbientLight(0xffffff));
+
+    // Particles
+    const particleCount = 18;
+    const particles = new THREE.Geometry();
+    const pMaterial = new THREE.PointsMaterial({
+      color: 0xff44ff,
+      size: 12
+    });
+
+    // now create the individual particles
+    for (let p = 0; p < particleCount; p++) {
+      // create a particle with random
+      // position values, -250 -> 250
+      const pX = Math.random() * 500 - 250;
+      const pY = Math.random() * 500 - 250;
+      const pZ = Math.random() * 500 - 250;
+      // expo says THREE.Vertex has been removed use Vector3 instead
+      //const particle = new THREE.Vertex(new THREE.Vector3(pX, pY, pZ));
+      const particle = new THREE.Vector3(pX, pY, pZ);
+
+      // add it to the geometry
+      particles.vertices.push(particle);
+    }
+
+    // create the particle system
+    const particleSystem = new THREE.ParticleSystem(particles, pMaterial);
+
+    // add it to the scene
+    this.scene.add(particleSystem);
   };
 
   // When the phone rotates, or the view changes size, this method will be called.
