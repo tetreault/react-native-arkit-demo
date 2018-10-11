@@ -5,6 +5,14 @@ Some of the basic demos so far:
 - ExpoARBasicDemo - created using Expo's AR API
 - ExpoARHitTesting - AR Hit Test demo with Expo's AR API
 
+## IMPORTANT NOTE:
+
+```
+Unfortunetly Apple will reject apps that reference ARKit without a direct usage. 🙄 Because of this, when we deploy we need to do a few extra things.
+```
+
+Follow the instructions in this [README from Expo](https://github.com/expo/expo-three/tree/master/example)
+
 ## Getting started with AR with Expo AR:
 
 - https://blog.expo.io/arkit-in-react-native-tutorial-the-basics-9f839539f0b9

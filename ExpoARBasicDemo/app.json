@@ -9,20 +9,52 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true
+    "splash": {
+      "image": "./assets/icons/splash.png",
+      "backgroundColor": "#ffffff",
+      "resizeMode": "cover"
     },
+    "assetBundlePatterns": ["assets/**/*"],
     "packagerOpts": {
-      "assetExts": ["dae", "obj", "mtl", "gif"]
+      "assetExts": [
+        "ttf",
+        "mp4",
+        "otf",
+        "dae",
+        "obj",
+        "mtl",
+        "amf",
+        "3mf",
+        "3ds",
+        "jpg",
+        "assimp",
+        "fbx",
+        "pmd",
+        "vmd",
+        "ply",
+        "stl",
+        "vtk",
+        "vtp",
+        "babylon",
+        "drc",
+        "pcd",
+        "pack",
+        "bvh",
+        "x"
+      ]
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.expo.expothree",
+      "icon": "./assets/icons/ios.png",
+      "buildNumber": "1",
+      "appStoreUrl": "https://itunes.apple.com/us/app/expo-three/id1401079652?ls=1&mt=8",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera for aumented reality experiences."
+      }
     }
   }
 }
