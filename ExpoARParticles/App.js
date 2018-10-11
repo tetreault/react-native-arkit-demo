@@ -15,7 +15,7 @@ export default class App extends React.Component {
         isArEnabled
         isArRunningStateEnabled
         isArCameraStateEnabled
-        arTrackingConfiguration={AR.TrackingConfigurations.Orientation}
+        arTrackingConfiguration={AR.TrackingConfigurations.World}
       />
     );
   }
@@ -56,11 +56,11 @@ export default class App extends React.Component {
     this.scene.add(new THREE.AmbientLight(0xffffff));
 
     // Particles
-    const particleCount = 18;
+    const particleCount = 400;
     const particles = new THREE.Geometry();
     const pMaterial = new THREE.PointsMaterial({
       color: 0xff44ff,
-      size: 12
+      size: 10
     });
 
     // now create the individual particles

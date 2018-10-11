@@ -4,6 +4,8 @@ Some of the basic demos so far:
 
 - ExpoARBasicDemo - created using Expo's AR API
 - ExpoARHitTesting - AR Hit Test demo with Expo's AR API
+- ExpoARModelLoading - Simple demo loading stormtrooper DAE file in Expo AR
+- ExpoARParticles - doing a basic ThreeJS particle system demo in Expo AR
 
 ## IMPORTANT NOTE:
 
