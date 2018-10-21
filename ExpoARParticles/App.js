@@ -49,29 +49,27 @@ export default class App extends React.Component {
     this.scene.background = new ThreeAR.BackgroundTexture(this.renderer);
     // Now we make a camera that matches the device orientation.
     // Ex: When we look down this camera will rotate to look down too!
-    this.camera = new ThreeAR.Camera(width, height, 0.01, 1000);
+    this.camera = new ThreeAR.Camera(width, height, 0.001, 1000);
 
     // Setup a light so we can see the cube color
     // AmbientLight colors all things in the scene equally.
     this.scene.add(new THREE.AmbientLight(0xffffff));
 
     // Particles
-    const particleCount = 400;
+    const particleCount = 200;
     const particles = new THREE.Geometry();
     const pMaterial = new THREE.PointsMaterial({
       color: 0xff44ff,
-      size: 10
+      size: 5
     });
 
     // now create the individual particles
     for (let p = 0; p < particleCount; p++) {
       // create a particle with random
       // position values, -250 -> 250
-      const pX = Math.random() * 500 - 250;
-      const pY = Math.random() * 500 - 250;
-      const pZ = Math.random() * 500 - 250;
-      // expo says THREE.Vertex has been removed use Vector3 instead
-      //const particle = new THREE.Vertex(new THREE.Vector3(pX, pY, pZ));
+      const pX = Math.random() * 150 - 100;
+      const pY = Math.random() * 100;
+      const pZ = Math.random() * 0 - 250;
       const particle = new THREE.Vector3(pX, pY, pZ);
 
       // add it to the geometry
@@ -79,7 +77,7 @@ export default class App extends React.Component {
     }
 
     // create the particle system
-    const particleSystem = new THREE.ParticleSystem(particles, pMaterial);
+    const particleSystem = new THREE.Points(particles, pMaterial);
 
     // add it to the scene
     this.scene.add(particleSystem);
