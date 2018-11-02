@@ -6,12 +6,10 @@ export default class HelloWorldSceneAR extends Component {
   constructor() {
     super();
 
-    // Set initial state here
     this.state = {
       text: "Initializing AR..."
     };
 
-    // bind 'this' to functions
     this._onInitialized = this._onInitialized.bind(this);
   }
 

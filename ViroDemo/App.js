@@ -25,7 +25,10 @@ const sharedProps = {
   apiKey: VIRO_KEY
 };
 
+// hello world demo
 import InitialARScene from "./js/HelloWorldSceneAR";
+// snow particle system demo
+import ParticleSnowSceneAR from "./js/ParticleSnowSceneAR";
 
 export default class ViroSample extends Component {
   constructor() {
@@ -40,7 +43,7 @@ export default class ViroSample extends Component {
     return (
       <ViroARSceneNavigator
         {...this.state.sharedProps}
-        initialScene={{ scene: InitialARScene }}
+        initialScene={{ scene: ParticleSnowSceneAR }}
       />
     );
   }
