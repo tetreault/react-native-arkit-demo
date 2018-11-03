@@ -28,7 +28,7 @@ export default class ParticleSnowSceneAR extends Component {
           delay={0}
           run={true}
           loop={true}
-          fixedToEmitter={true}
+          fixedToEmitter={false}
           image={{
             source: require("./res/particle.png"),
             height: 0.01,
@@ -40,7 +40,7 @@ export default class ParticleSnowSceneAR extends Component {
             emissionRatePerSecond: [100, 100],
             spawnVolume: {
               shape: "box",
-              params: [20, 1, 20],
+              params: [0.1, 0.1, 0.1],
               spawnOnSurface: false
             },
             maxParticles: 2000
@@ -71,7 +71,7 @@ export default class ParticleSnowSceneAR extends Component {
           }}
           particlePhysics={{
             velocity: {
-              initialRange: [[-2 * 1.0, -0.5, 0], [2 * 1.0, -3.0 * 1.0, 0]]
+              initialRange: [[-0.1, -1, 0], [0.1, 1, 0]]
             }
           }}
         />
