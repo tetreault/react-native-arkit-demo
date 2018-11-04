@@ -41,6 +41,16 @@ export default class ARPhysicsSample extends Component {
       planeRotation: [0, 0, 0],
       totalCubes: 0
     };
+
+    this.ballProperties = {
+      friction: 0.6,
+      type: "Dynamic",
+      mass: 4,
+      enabled: true,
+      useGravity: true,
+      shape: { type: "Sphere", params: [0.14] },
+      restitution: 0.65
+    };
   }
 
   /*
@@ -57,7 +67,9 @@ export default class ARPhysicsSample extends Component {
       anchorMap.position[1] + anchorMap.center[1],
       anchorMap.position[2] + anchorMap.center[2]
     ];
+
     this.arPlaneRef.setNativeProps({ pauseUpdates: true });
+
     this.setState({
       foundPlane: true,
       planePosition: worldCenterPosition,
@@ -70,16 +82,16 @@ export default class ARPhysicsSample extends Component {
       return;
     }
 
-    this.ballProperties = {
-      friction: 0.6,
-      type: "Dynamic",
-      mass: 4,
-      enabled: true,
-      useGravity: true,
-      shape: { type: "Sphere", params: [0.14] },
-      restitution: 0.65
-    };
-    
+    // this.ballProperties = {
+    //   friction: 0.6,
+    //   type: "Dynamic",
+    //   mass: 4,
+    //   enabled: true,
+    //   useGravity: true,
+    //   shape: { type: "Sphere", params: [0.14] },
+    //   restitution: 0.65
+    // };
+
     return (
       <ViroNode position={this.state.planePosition}>
         {/* Create 2 UI buttons for controlling interaction with the basketballs */}
@@ -230,7 +242,7 @@ export default class ARPhysicsSample extends Component {
   }
 
   _toggleControllerInteraction() {
-    const endConfig = 1;
+    let endConfig = 1;
     if (this.state.controllerConfig == 1) {
       endConfig = 2;
     } else if (this.state.controllerConfig == 2) {

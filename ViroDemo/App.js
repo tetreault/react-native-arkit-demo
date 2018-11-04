@@ -1,12 +1,3 @@
-/**
- * Copyright (c) 2017-present, Viro, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
 import React, { Component } from "react";
 import {
   AppRegistry,
@@ -16,7 +7,6 @@ import {
   PixelRatio,
   TouchableHighlight
 } from "react-native";
-
 import { ViroARSceneNavigator } from "react-viro";
 
 import { VIRO_KEY } from "./Constants";
@@ -27,8 +17,15 @@ const sharedProps = {
 
 // hello world demo
 import InitialARScene from "./js/HelloWorldSceneAR";
+
 // snow particle system demo
 import ParticleSnowSceneAR from "./js/ParticleSnowSceneAR";
+
+// basic physics demo
+import ARPhysicsSample from "./js/ARPhysicsSample";
+
+// basic physics 2 demo
+import ARPhysics2Sample from "./js/ARPhysicsSample";
 
 export default class ViroSample extends Component {
   constructor() {
@@ -43,7 +40,7 @@ export default class ViroSample extends Component {
     return (
       <ViroARSceneNavigator
         {...this.state.sharedProps}
-        initialScene={{ scene: ParticleSnowSceneAR }}
+        initialScene={{ scene: ARPhysics2Sample }}
       />
     );
   }

@@ -11,10 +11,6 @@ export default class ParticleSnowSceneAR extends Component {
   constructor() {
     super();
 
-    this.state = {
-      text: "Initializing AR..."
-    };
-
     this._onInitialized = this._onInitialized.bind(this);
   }
 
@@ -22,13 +18,13 @@ export default class ParticleSnowSceneAR extends Component {
     return (
       <ViroARScene onTrackingUpdated={this._onInitialized}>
         <ViroParticleEmitter
-          position={[0, 4.5, 0]}
+          position={[5, -5, 0]}
           duration={2000}
           visible={true}
           delay={0}
           run={true}
           loop={true}
-          fixedToEmitter={false}
+          fixedToEmitter={true}
           image={{
             source: require("./res/particle.png"),
             height: 0.01,
@@ -41,7 +37,7 @@ export default class ParticleSnowSceneAR extends Component {
             spawnVolume: {
               shape: "box",
               params: [0.1, 0.1, 0.1],
-              spawnOnSurface: false
+              spawnOnSurface: true
             },
             maxParticles: 2000
           }}
@@ -81,11 +77,9 @@ export default class ParticleSnowSceneAR extends Component {
 
   _onInitialized(state, reason) {
     if (state == ViroConstants.TRACKING_NORMAL) {
-      this.setState({
-        text: "Hello World!"
-      });
+      // handle proper tracking if needed
     } else if (state == ViroConstants.TRACKING_NONE) {
-      // Handle loss of tracking
+      // Handle loss of tracking if needed
     }
   }
 }
