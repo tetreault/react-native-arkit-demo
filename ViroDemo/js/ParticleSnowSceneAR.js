@@ -36,7 +36,7 @@ export default class ParticleSnowSceneAR extends Component {
             emissionRatePerSecond: [100, 100],
             spawnVolume: {
               shape: "box",
-              params: [0.1, 0.1, 0.1],
+              params: [100, 100, 100],
               spawnOnSurface: true
             },
             maxParticles: 2000

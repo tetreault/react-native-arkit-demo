@@ -27,6 +27,9 @@ import ARPhysicsSample from "./js/ARPhysicsSample";
 // basic physics 2 demo
 import ARPhysics2Sample from "./js/ARPhysicsSample";
 
+// ARViro3DObject demo
+import ARViro3DObject from "./js/ARViro3DObject";
+
 export default class ViroSample extends Component {
   constructor() {
     super();
@@ -40,7 +43,7 @@ export default class ViroSample extends Component {
     return (
       <ViroARSceneNavigator
         {...this.state.sharedProps}
-        initialScene={{ scene: ARPhysics2Sample }}
+        initialScene={{ scene: ARViro3DObject }}
       />
     );
   }
