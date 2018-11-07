@@ -22,10 +22,10 @@ import InitialARScene from "./js/HelloWorldSceneAR";
 import ParticleSnowSceneAR from "./js/ParticleSnowSceneAR";
 
 // basic physics demo
-import ARPhysicsSample from "./js/ARPhysicsSample";
+//import ARPhysicsSample from "./js/ARPhysicsSample";
 
 // basic physics 2 demo
-import ARPhysics2Sample from "./js/ARPhysicsSample";
+//import ARPhysics2Sample from "./js/ARPhysicsSample";
 
 // ARViro3DObject demo
 import ARViro3DObject from "./js/ARViro3DObject";
@@ -43,7 +43,7 @@ export default class ViroSample extends Component {
     return (
       <ViroARSceneNavigator
         {...this.state.sharedProps}
-        initialScene={{ scene: ARViro3DObject }}
+        initialScene={{ scene: InitialARScene }}
       />
     );
   }

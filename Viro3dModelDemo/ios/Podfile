@@ -1,0 +1,9 @@
+platform :ios, '9.3'
+target 'Viro3dModelDemo' do
+  use_frameworks!
+  pod 'ViroReact', :path => '../node_modules/react-viro/ios/'
+  pod 'ViroKit', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/'
+    pod 'GTMSessionFetcher/Core', '1.1.6'
+  pod 'GoogleToolboxForMac/Logger', '2.1.0'
+  pod 'GoogleToolboxForMac/Defines', '2.1.0'
+end

@@ -1,0 +1,54 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  Deep Exploration 6.5 x64 6.5.0.9182
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl bottle
+Ka 0.5 0.5 0.5
+Kd 1 1 1
+Ks 1 1 1
+illum 2
+Ns 51.9842
+map_Kd bottle_diffuse.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS bottle_reflection.png
+map_kA 
+map_Ns 
+
+newmtl plastic_orange
+Ka 0.701961 0.301961 0.0313726
+Kd 0.701961 0.301961 0.0313726
+Ks 0.9 0.9 0.9
+illum 2
+Ns 415.873
+map_Kd 
+map_bump plastic_bump.png
+bump plastic_bump.png
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl plastic_white
+Ka 0.470588 0.470588 0.470588
+Kd 0.470588 0.470588 0.470588
+Ks 0.9 0.9 0.9
+illum 2
+Ns 64
+map_Kd 
+map_bump plastic_bump.png
+bump plastic_bump.png
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
